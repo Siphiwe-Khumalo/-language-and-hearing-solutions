@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="t2 d2">
+  <title id="t2">Placeholder image — speech therapy session</title>
+  <desc id="d2">Illustrative placeholder representing a clinician and client in a speech therapy session. Replace with an approved practice photograph.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EAF5F4"/>
+      <stop offset="1" stop-color="#D3ECEA"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#bg2)"/>
+  <path d="M0,120 C140,160 260,90 400,120 C500,142 580,110 640,130 L640,0 L0,0 Z" fill="#0F6E6A" opacity="0.08"/>
+  <!-- two simple seated figures facing each other -->
+  <g fill="#0B4A47">
+    <circle cx="230" cy="220" r="38"/>
+    <path d="M170,340 C170,280 200,260 230,260 C260,260 290,280 290,340 Z"/>
+  </g>
+  <g fill="#0F6E6A">
+    <circle cx="410" cy="220" r="38"/>
+    <path d="M350,340 C350,280 380,260 410,260 C440,260 470,280 470,340 Z"/>
+  </g>
+  <!-- speech bubble with sound lines -->
+  <g transform="translate(292,150)">
+    <rect x="0" y="0" width="56" height="38" rx="12" fill="#ffffff" stroke="#0F6E6A" stroke-width="3"/>
+    <path d="M14,38 L10,50 L26,38 Z" fill="#ffffff" stroke="#0F6E6A" stroke-width="3"/>
+    <line x1="12" y1="14" x2="44" y2="14" stroke="#0F6E6A" stroke-width="3" stroke-linecap="round"/>
+    <line x1="12" y1="24" x2="34" y2="24" stroke="#0F6E6A" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <text x="320" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#0B4A47" opacity="0.7">Placeholder image — replace with practice photograph</text>
+</svg>
