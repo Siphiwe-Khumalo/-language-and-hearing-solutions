@@ -1,20 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="t1 d1">
-  <title id="t1">Placeholder image — hearing aid device close-up</title>
-  <desc id="d1">Illustrative placeholder representing a behind-the-ear hearing aid. Replace with an approved practice photograph.</desc>
-  <defs>
-    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#E7F3F2"/>
-      <stop offset="1" stop-color="#CFE9E7"/>
-    </linearGradient>
-  </defs>
-  <rect width="640" height="480" fill="url(#bg1)"/>
-  <!-- soft wave backdrop -->
-  <path d="M0,340 C120,300 220,380 340,340 C460,300 540,360 640,320 L640,480 L0,480 Z" fill="#0F6E6A" opacity="0.10"/>
-  <!-- stylised BTE hearing aid -->
-  <g transform="translate(230,120)">
-    <path d="M60,0 C110,0 140,40 130,90 C126,110 108,120 100,140 L96,190 C95,200 84,206 76,199 L64,182 C58,174 60,164 66,158 L70,120 C40,110 20,80 30,45 C36,20 45,5 60,0 Z" fill="#0B4A47"/>
-    <ellipse cx="70" cy="205" rx="10" ry="26" fill="#D9CBAE"/>
-    <circle cx="95" cy="55" r="6" fill="#0F6E6A"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Hearing care illustration</title>
+  <desc id="desc">A calm teal illustration of a hearing aid device on a soft clinical background.</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F4FAF9"/><stop offset="1" stop-color="#DCEFEB"/></linearGradient></defs>
+  <rect width="640" height="480" fill="url(#bg)"/>
+  <circle cx="510" cy="92" r="130" fill="#0F6E6A" opacity=".06"/>
+  <path d="M0 358c124-42 215 29 334-5 113-32 201 27 306-12v139H0Z" fill="#0F6E6A" opacity=".1"/>
+  <g transform="translate(225 90)">
+    <path d="M84 0c57 0 89 46 76 98-7 27-30 38-39 62l-5 73c-1 14-17 22-28 12l-18-22c-8-10-5-25 5-32l7-41c-40-14-60-48-48-86C42 24 58 0 84 0Z" fill="#0B4A47"/>
+    <path d="M96 40c21 1 33 16 29 32-3 11-14 15-20 25-6 9-6 21 2 27" fill="none" stroke="#7FD3CE" stroke-width="8" stroke-linecap="round"/>
+    <ellipse cx="75" cy="258" rx="13" ry="29" fill="#B99B70"/>
+    <circle cx="119" cy="52" r="7" fill="#7FD3CE"/>
   </g>
-  <text x="320" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#0B4A47" opacity="0.7">Placeholder image — replace with practice photograph</text>
+  <g fill="#0F6E6A" opacity=".9"><rect x="405" y="260" width="7" height="34" rx="3.5"/><rect x="420" y="248" width="7" height="58" rx="3.5"/><rect x="435" y="256" width="7" height="42" rx="3.5"/><rect x="450" y="266" width="7" height="22" rx="3.5"/></g>
 </svg>

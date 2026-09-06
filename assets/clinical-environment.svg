@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Calm clinical care illustration</title>
+  <desc id="desc">A calm teal illustration of a welcoming healthcare consultation environment.</desc>
+  <rect width="640" height="480" fill="#F4FAF9"/>
+  <path d="M0 390h640v90H0Z" fill="#DCEFEB"/>
+  <rect x="88" y="94" width="206" height="190" rx="10" fill="#fff" stroke="#0F6E6A" stroke-width="4"/>
+  <path d="M122 135h138M122 166h98M122 197h120" stroke="#0F6E6A" stroke-width="8" stroke-linecap="round" opacity=".7"/>
+  <circle cx="405" cy="160" r="44" fill="#0B4A47"/><path d="M332 350c4-93 36-144 73-144s69 51 73 144Z" fill="#0B4A47"/>
+  <circle cx="505" cy="240" r="32" fill="#0F6E6A"/><path d="M449 350c4-68 27-99 56-99s52 31 56 99Z" fill="#0F6E6A"/>
+  <path d="M353 236c30-22 58-22 88 0" fill="none" stroke="#7FD3CE" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="534" cy="83" r="40" fill="#0F6E6A" opacity=".1"/>
+</svg>
