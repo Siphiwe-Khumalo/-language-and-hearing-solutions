@@ -98,6 +98,51 @@
     elements.forEach(function (element) { observer.observe(element); });
   }
 
+  function initCounters() {
+    var counters = document.querySelectorAll("[data-count-to]");
+    if (!counters.length) return;
+    var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function animateCounter(el) {
+      var target = parseFloat(el.getAttribute("data-count-to"));
+      if (isNaN(target)) return;
+      if (reduced || !("requestAnimationFrame" in window)) {
+        el.textContent = String(target);
+        return;
+      }
+      var duration = 1200;
+      var start = null;
+      el.textContent = "0";
+      function step(timestamp) {
+        if (start === null) start = timestamp;
+        var progress = Math.min((timestamp - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var current = Math.round(target * eased);
+        el.textContent = String(current);
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        } else {
+          el.textContent = String(target);
+        }
+      }
+      window.requestAnimationFrame(step);
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      counters.forEach(animateCounter);
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function (el) { observer.observe(el); });
+  }
+
   function initAccordions() {
     document.querySelectorAll(".faq-question").forEach(function (button) {
       button.addEventListener("click", function () {
@@ -182,11 +227,23 @@
     });
   }
 
+  function initStagger() {
+    document.querySelectorAll("[data-stagger]").forEach(function (group) {
+      Array.prototype.forEach.call(group.children, function (child, index) {
+        if (child.classList.contains("reveal")) {
+          child.style.transitionDelay = Math.min(index * 70, 420) + "ms";
+        }
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initNavigation();
     markCurrentPage();
+    initStagger();
     initReveal();
     initAccordions();
+    initCounters();
     initContactForm();
   });
 })();
