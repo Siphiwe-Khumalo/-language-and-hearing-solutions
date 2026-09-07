@@ -1,40 +1,39 @@
 # Language and Hearing Solutions (Pty) Ltd — Website
 
-A static, mobile-first website for **Language and Hearing Solutions (Pty) Ltd**, a South African audiology and speech therapy practice. Built with plain HTML5, CSS3 and vanilla JavaScript — no frameworks, no build step, no backend.
+A premium, static, mobile-first website for **Language and Hearing Solutions (Pty) Ltd**, a South African audiology and speech therapy practice. Built with plain HTML5, CSS3 and vanilla JavaScript — no frameworks, build step or backend.
 
-> "Language and hearing are the two windows to the soul."
+> “Language and hearing are the two windows to the soul.”
 
----
-
-## File Structure
+## File structure
 
 ```text
 /
-├── index.html                 Home
-├── about.html                 About (vision, mission, values)
-├── services.html              Audiology & Speech Therapy service directory
-├── corporate-wellness.html    Industrial & Corporate Wellness
-├── clients.html                Case studies (Sasol Mine Secunda, Transnet)
-├── contact.html                Contact form, contact cards, locations
+├── index.html                 Home and practice overview
+├── about.html                 Practice story, credentials, values and approach
+├── services.html              Audiology and speech therapy service directory
+├── corporate-wellness.html    Industrial audiology and workplace wellness
+├── clients.html               Data-led workplace screening case studies
+├── contact.html               Contact methods, enquiry form and locations
 │
 ├── css/
-│   └── style.css              Full design system (tokens, layout, components)
+│   └── style.css              Shared premium design system and responsive layout
 │
 ├── js/
-│   └── main.js                Mobile nav, scroll reveal, form validation
+│   └── main.js                Navigation, reveal states, FAQ and form validation
 │
 ├── assets/
-│   ├── logo.svg                Recreated brand mark (profile + ear + sound wave)
-│   ├── hearing-aid.svg         Placeholder hero/services image
-│   ├── speech-therapy.svg      Placeholder services image
-│   └── industrial-visit.svg    Placeholder corporate wellness image
+│   ├── logo.svg                Teal profile, ear and sound-wave brand mark
+│   ├── hearing-aid.svg         Editorial audiology illustration
+│   ├── speech-therapy.svg      Editorial speech-therapy illustration
+│   ├── industrial-visit.svg    Editorial workplace-visit illustration
+│   └── clinical-environment.svg Editorial consultation-environment illustration
 │
 └── README.md
 ```
 
 ## Running the site
 
-No build tools or server required. Open `index.html` directly in a browser, or serve the folder with any static file server, e.g.:
+No build tools or server are required. Open `index.html` directly in a browser, or serve the folder with any static file server:
 
 ```bash
 npx serve .
@@ -44,66 +43,46 @@ python3 -m http.server 8080
 
 Then visit `http://localhost:8080` (adjust the port to whichever tool you use).
 
-## Placeholder assets — please replace before going live
+## Design direction
 
-The letterhead image supplied in chat could not be saved to disk as a usable image file, so the following were created as **clearly labelled SVG placeholders** so the site is visually complete and ready to swap:
+The redesign is intentionally structured as a private healthcare practice rather than a template collection of cards:
 
-- `assets/logo.svg` — a recreation of the described brand mark (circular teal ring, facial profile, ear, sound wave) in the practice's teal (`#0F6E6A`) and dark teal (`#0B4A47`). **Replace with the actual logo file** (ideally an SVG or high-resolution PNG) for pixel-perfect brand accuracy.
-- `assets/hearing-aid.svg`, `assets/speech-therapy.svg`, `assets/industrial-visit.svg` — illustrative teal-toned placeholders, each captioned "Placeholder image — replace with practice photograph" directly in the image and in its `<title>`/`<desc>` for accessibility. Replace with real photography (hearing aid close-up, clinician/patient session, onsite industrial visit) when available. Keep the same filenames, or update the `src` attributes in each HTML file if you rename them.
+- Warm white, sand, deep navy and restrained teal create a calm clinical palette.
+- Editorial serif display typography is paired with a readable sans-serif body face.
+- Credentials, practice number and locations are visible early without overwhelming the page.
+- Asymmetric editorial sections, numbered directories, data-led proof cards and a clear contact hierarchy replace repetitive rounded-card layouts.
+- Corporate Wellness uses a more operational B2B flow: service scope, process, screening context and case-study evidence.
+- The homepage follows the intended journey: hero → trust → practice → services → audiences → corporate wellness → field evidence → care promise → FAQ → contact CTA.
+- Layouts adapt for 360px and 390px phones, tablet, laptop and large desktop widths. Reduced-motion preferences are respected.
 
-No other content was invented. Per the brief, the following are intentionally left as **placeholders** because the exact official wording was not supplied:
+The local SVG illustrations are lightweight, brand-coloured artwork created for the static experience. They keep the website self-contained and fast while approved practice photography or final brand artwork can be substituted later without changing the page structure.
 
-- **Vision statement** (`about.html`) — currently shows the slogan and a placeholder note. Replace with the official wording from the company profile PDF.
-- **Mission statement** (`about.html`) — currently shows a placeholder note plus a short, non-committal description of day-to-day approach. Replace with the official wording.
-- **Director's name** — not shown anywhere, since it was not supplied.
-- **Social media links** — omitted, as no profiles were supplied.
-- **Opening hours** — omitted, as none were supplied.
-- **Exact per-kilometre travel rate** — described only as "the applicable South African standard per-kilometre rate," per instruction not to invent a figure.
+## Content boundaries
+
+No staff names, patient testimonials, opening hours, prices, exact travel rates or unverified medical claims have been added. The practice is described as a single-director practice without naming the director. The official mission and full vision wording remain clearly marked as pending because the exact approved wording was not supplied. The practice slogan is presented as a slogan, not as a patient testimonial.
+
+The case-study figures are labelled as relating only to specific workplace screening visits and not to the total number of patients served:
+
+- Sasol Mine Secunda: 25 people screened, 15 required ear-wax management, and 11 failed screening due to wax blockage and were referred for further assessment.
+- Transnet: 40 people screened, 11 required wax management, 2 presented possible hearing loss and 4 had tympanic membrane perforations.
 
 ## Contact form — no backend
 
-`contact.html` includes a fully client-side validated enquiry form (required fields, email format check, inline error messages, ARIA live-region feedback). Because this is a static site with **no backend**, submitting the form does **not** send data to a server. Instead, `js/main.js` builds a `mailto:` link from the form fields and opens the visitor's own email client with the message pre-filled, addressed to `info@languageandhearingsolutions.co.za`. The on-screen success message reflects this accurately.
+`contact.html` includes a client-side validated enquiry form with required fields, inline error messages and ARIA feedback. Because this is a static site with **no backend**, submitting the form does not send data to a server. Instead, `js/main.js` builds a `mailto:` link from the form fields and opens the visitor’s email client with the message pre-filled for `info@languageandhearingsolutions.co.za`. The on-screen message accurately provides direct email and WhatsApp fallbacks.
 
-### Connecting a real form backend later
+The field names (`name`, `email`, `phone`, `service`, `message`) are already suitable for connecting a real form backend later.
 
-To have submissions delivered automatically (recommended for production), connect the existing form markup to a form backend such as:
+## Accessibility and SEO
 
-- **[Formspree](https://formspree.io/)** — set the form's `action` to your Formspree endpoint and `method="POST"`, then remove/adjust the `mailto:` logic in `main.js`.
-- **[Netlify Forms](https://docs.netlify.com/forms/setup/)** — if hosting on Netlify, add `data-netlify="true"` and a hidden `form-name` input to the `<form>` tag; Netlify will handle submissions automatically.
+- Semantic HTML5 landmarks and a skip-to-content link are used throughout.
+- Navigation, FAQ controls and form feedback expose accessible states.
+- All meaningful images have descriptive alt text; decorative footer marks use empty alt text.
+- Visible keyboard focus states, responsive mobile actions and `prefers-reduced-motion` support are included.
+- Every page has a unique title, description, canonical URL, favicon, Open Graph title/description and Twitter card metadata.
 
-The field `name` attributes (`name`, `email`, `phone`, `service`, `message`) are already backend-friendly and require no renaming.
-
-## Design system
-
-All shared styling lives in `css/style.css`, organised into reusable components:
-
-- CSS custom properties for colour, radius, shadow and spacing tokens (teal `#0F6E6A`, dark teal `#0B4A47`, white, greys)
-- Header / sticky nav / animated mobile menu
-- Hero and page-hero sections with wave dividers
-- Buttons (`btn-primary`, `btn-secondary` for WhatsApp green, `btn-outline`, `btn-outline-light`)
-- Cards: generic `.card`, `.pillar-card`, `.service-card`, `.location-card`, `.contact-card`, `.case-card`, `.value-card`
-- Trust bar, coverage section, contact strip, footer
-- Floating WhatsApp button (`.whatsapp-float`)
-- Form fields with validation states
-- `.reveal` scroll-in animation, disabled automatically under `prefers-reduced-motion`
-
-## Accessibility
-
-- Semantic HTML5 landmarks (`header`, `nav`, `main`, `footer`, `address`)
-- Skip-to-content link on every page
-- Visible focus states on all interactive elements
-- Descriptive `alt` text (including placeholder images, which are labelled as such)
-- Labelled form fields with `aria-live` error/success feedback
-- Colour is never the sole means of conveying information
-- Respects `prefers-reduced-motion`
-- No autoplay audio/video
-
-## SEO
-
-Every page has a unique `<title>`, meta description, and a `canonical` link placeholder (`https://www.languageandhearingsolutions.co.za/...`) — update these to the real production domain when the site is deployed.
-
-## Key contact links used throughout
+## Key contact links
 
 - WhatsApp: `https://wa.me/27797195743`
-- Phone (Cell): `tel:+27628653860`
+- WhatsApp / phone: `079 719 5743`
+- Cell: `tel:+27628653860`
 - Email: `mailto:info@languageandhearingsolutions.co.za`
