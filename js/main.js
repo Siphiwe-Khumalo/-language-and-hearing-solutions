@@ -402,3 +402,68 @@
     initContactForm();
   });
 })();
+
+
+
+/* ---------------------------------------------------------------------------
+   Art direction layer: directional reveals, subtle depth and header state.
+   All effects are disposable enhancements; content remains fully usable without JS.
+   --------------------------------------------------------------------------- */
+(function () {
+  "use strict";
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function initArtDirectedMotion() {
+    document.querySelectorAll(".editorial-image, .service-intro__image, .corporate-band__visual, .hero-art").forEach(function (el) {
+      el.classList.add("reveal--scale");
+    });
+
+    document.querySelectorAll(".editorial-grid > :first-child, .service-intro > :first-child").forEach(function (el) {
+      if (!el.classList.contains("reveal--scale")) el.classList.add("reveal--left");
+    });
+
+    document.querySelectorAll(".editorial-grid > :last-child, .service-intro > :last-child").forEach(function (el) {
+      if (!el.classList.contains("reveal--scale")) el.classList.add("reveal--right");
+    });
+
+    document.querySelectorAll(".credential-belt__track").forEach(function (track) {
+      track.parentElement.setAttribute("tabindex", "0");
+    });
+
+    if (reduced) return;
+
+    var backdrop = document.querySelector(".home-hero__backdrop");
+    var artFrame = document.querySelector(".hero-art__frame");
+    var ticking = false;
+
+    function updateDepth() {
+      var scrollY = window.scrollY || window.pageYOffset || 0;
+      if (backdrop) backdrop.style.setProperty("--parallax-y", Math.min(scrollY * .08, 28) + "px");
+      if (artFrame) artFrame.style.setProperty("--parallax-y", Math.min(scrollY * .035, 16) + "px");
+      ticking = false;
+    }
+
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        window.requestAnimationFrame(updateDepth);
+        ticking = true;
+      }
+    }, { passive: true });
+    updateDepth();
+  }
+
+  function initHeaderState() {
+    var header = document.querySelector(".site-header");
+    if (!header) return;
+    function update() {
+      header.classList.toggle("is-scrolled", (window.scrollY || 0) > 12);
+    }
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    initArtDirectedMotion();
+    initHeaderState();
+  });
+})();
